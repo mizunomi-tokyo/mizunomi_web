@@ -26,6 +26,7 @@ body{
 
 .hero{
   font-family: 'Orbitron', sans-serif;
+  font-size: 0.8em;
 }
 
 .logo{
@@ -43,7 +44,6 @@ body{
 
 @media (max-width: 1024px) {
   body{
-    background-image: url(../video/glitch.jpg);
     background-size: cover;
   } 
 }
