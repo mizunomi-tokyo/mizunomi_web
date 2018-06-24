@@ -9,7 +9,7 @@
     <meta property="og:description" content="mizunomi.tokyo,水呑百姓東京,水呑百姓">
     <meta property="og:site_name" content="水呑百姓東京" />
     <meta property="og:image" content="../assets/thumb.png" />
-    <title>mizunomi_tokyo</title>
+    <title>Mizunomi Ticketter</title>
     <link rel="apple-touch-icon" sizes="57x57" href="../apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="../apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="../apple-icon-72x72.png">
@@ -27,6 +27,24 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="../ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDAGfG6pVxEgN8dhabiB7VBOcOtYHMYghc",
+        authDomain: "ticketter-3469b.firebaseapp.com",
+        databaseURL: "https://ticketter-3469b.firebaseio.com",
+        projectId: "ticketter-3469b",
+        storageBucket: "",
+        messagingSenderId: "191044979604"
+    };
+    firebase.initializeApp(config);
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/js/qrcode.js"></script>
+    <script type="text/javascript" src="../assets/js/index.js"></script>
     <link rel="stylesheet" href="../assets/css/bulma.css">
     <link rel="stylesheet" href="../assets/css/grayback.css">
     <link rel="stylesheet" href="../assets/css/main.css">
@@ -138,31 +156,26 @@
             <div class="container">
                 <div class="columns">
                     <div class="column">
-                        <figure class="image is-square">
-                            <img src="https://bulma.io/images/placeholders/256x256.png">
-                        </figure>
+                        <div id="title"></div>
+                        <div id="qrcode"></div>
+                        <div id="notice"></div>
                     </div>
                     <div class="column">
-                        <h1 class="title white">百姓一揆#1</h1>
-                        <br>
-                        <h1 class="subtitle white">SUMMARY</h1>
-                        <p class="white">
-                            水呑百姓東京による企画第一弾
-                            <br>日本橋馬喰町の廃ビルを舞台に VJ・インスタレーション・音楽・ペイントで埋め尽くします</p>
-                        <br>
-                        <h1 class="subtitle white">DATE</h1>
-                        <p class="white">7月8日（日） OPEN 13:30 START 14:00</p>
-                        <br>
-                        <h1 class="subtitle white">PERFORMER</h1>
-                        <p class="white">DJ: tomad / kyo / SLUSHO /DJ cell</p>
-                        <p class="white">live paint: 竹谷嘉人 / えばと / KATHMI / たなかあずさ +more!</p>
-                        <br>
-                        <h1 class="subtitle white">TICKET</h1>
-                        <p class="white">前売り:2500円 door:3000円</p>
-                        <br>
-                        <a class="button is-danger" href="https://paymo.life/shops/c687e278e6">チケット販売ページ</a>
-                        &nbsp;
-                        <a class="button is-link" href="http://mizunomi.tokyo/ticket">チケット発行ページ</a>
+                        <div class="field">
+                            <label class="label white">マジックワード</label>
+                            <div class="control">
+                                <input id="word" class="input is-rounded" type="text" placeholder="マジックワード">
+                            </div>
+                            <p class="help white">決済後のメールに記載されているマジックワードを記入してください。</p>
+                        </div>
+                        <div class="field">
+                            <label class="label white">電話番号</label>
+                            <div class="control">
+                                <input id="text" class="input is-rounded" type="text" placeholder="電話番号">
+                            </div>
+                            <p class="help white">決済時に使用した電話番号を入力してください。</p>
+                        </div>
+                        <a id="send" class="button is-danger is-rounded">GET TICKET</a>
                     </div>
                 </div>
             </div>
