@@ -3,12 +3,16 @@ a:visited { color: #666; }
 a:hover { color: #666; }
 a:active { color: #666; }
 
-
+html{
+  overflow:hidden;
+}
 body{
   margin: 0;
-  width: 100%;
+  padding: 0;
+  width: 99%;
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .navbar{
@@ -35,9 +39,10 @@ body{
   color: white;
 }
 
-.none a{
-  
+.black{
+  color: black;
 }
+
 
 @media (max-width: 1024px) {
   body{
