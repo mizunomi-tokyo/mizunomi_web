@@ -3,13 +3,6 @@ a:visited { color: #666; }
 a:hover { color: #666; }
 a:active { color: #666; }
 
-html{
-    background-image: url(../video/glitch.jpg);
-    background-size: cover;
-    margin: 0;
-  width: 100%;
-  height: 100%;
-}
 
 body{
   margin: 0;
@@ -40,6 +33,10 @@ body{
 
 .white{
   color: white;
+}
+
+.none a{
+  
 }
 
 @media (max-width: 1024px) {
