@@ -34,6 +34,6 @@ var eventType = (isTouchDevice) ? 'touchend' : 'click';
     }
     function appendTicketData () {
       $('#title').append('<h1 class="subtitle white">TICKET GENERATE SUCCESS!!</h1>');
-      $('#notice').append('<div><p class=" white">スクリーンショットで保存してください。</p></div>');
+      $('#notice').append('<div class="is-hidden-desktop"><p class=" white">スクリーンショットで保存してください。</p></div>');
     }
 }
