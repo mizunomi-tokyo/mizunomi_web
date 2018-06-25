@@ -53,6 +53,10 @@ body{
 color: #ccc;
 }
 
+.container{
+  margin-top: 6rem;
+}
+
 
 
 @media (max-width: 1024px) {
