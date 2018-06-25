@@ -42,10 +42,7 @@ var eventType = (isTouchDevice) ? 'touchend' : 'click';
 
 $( '#text' ).keypress( function ( e ) {
   if ( e.which == 13 ) {
-  // ここに処理を書く
-
-// スマホのキーボードを閉じる
   $('#text').blur();
    return false;
 }
-})
+});
