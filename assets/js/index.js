@@ -33,7 +33,19 @@ var eventType = (isTouchDevice) ? 'touchend' : 'click';
       qrcode.makeCode(str);
     }
     function appendTicketData () {
+      $('#title').empty();
+      $('#notice').empty();
       $('#title').append('<h1 class="subtitle white">TICKET GENERATE SUCCESS!!</h1>');
       $('#notice').append('<div class="is-hidden-desktop"><p class=" white">スクリーンショットで保存してください。</p></div>');
     }
 }
+
+$( '#text' ).keypress( function ( e ) {
+  if ( e.which == 13 ) {
+  // ここに処理を書く
+
+// スマホのキーボードを閉じる
+  $('#text').blur();
+   return false;
+}
+})
